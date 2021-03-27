@@ -51,14 +51,14 @@ export class UsersService {
 
   public async update(loggedInUser: User, userId: string, body: UpdateUserDto) {
     let user = await this.findOne(userId);
-    if (!user) {
-      throw new HttpException(
-        {
-          message: 'No user found',
-        },
-        HttpStatus.NOT_FOUND,
-      );
-    }
+    // if (!user) {
+    //   throw new HttpException(
+    //     {
+    //       message: 'No user found',
+    //     },
+    //     HttpStatus.NOT_FOUND,
+    //   );
+    // }
     if (!body.nickname && !body.comment) {
       throw new HttpException(
         {
