@@ -35,7 +35,7 @@ export class UsersService {
       detail = { user_id: user.userId, nickname: user.nickname };
     }
     return {
-      message: 'User details for user_id',
+      message: 'User details by user_id',
       user: detail,
     };
   }
