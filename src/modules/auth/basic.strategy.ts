@@ -13,7 +13,7 @@ export class BasicStrategy extends PassportStrategy(Strategy) {
     const user = await this.authService.validateUser(userId, password);
     if (!user) {
       throw new UnauthorizedException({
-        message: 'Authentication failed',
+        message: 'Authentication Faild',
       });
     }
     return user;

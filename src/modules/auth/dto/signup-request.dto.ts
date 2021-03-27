@@ -6,10 +6,10 @@ import {
   Matches,
 } from 'class-validator';
 export class SignupRequestDto {
-  @IsNotEmpty()
-  @IsHalfWidth()
+  @IsNotEmpty({ message: 'required user_id and password' })
+  @IsHalfWidth({ message: 'required user_id and password' })
   @IsAlphanumeric()
-  @Length(6, 20)
+  @Length(6, 20, { message: 'required user_id and password' })
   user_id: string;
 
   @IsNotEmpty()

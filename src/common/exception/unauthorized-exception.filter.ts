@@ -13,7 +13,7 @@ export class UnauthorizedExceptionFilter implements ExceptionFilter {
     const status = exception.getStatus();
 
     response.status(status).json({
-      message: 'Authentication failed',
+      message: 'Authentication Faild',
     });
   }
 }
