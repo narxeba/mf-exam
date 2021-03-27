@@ -11,11 +11,12 @@ export class AspectLogger implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler) {
     const req = context.switchToHttp().getRequest();
     const { statusCode } = context.switchToHttp().getResponse();
-    const { originalUrl, method, params, query, body } = req;
+    const { originalUrl, method, header, params, query, body } = req;
 
     console.log({
       originalUrl,
       method,
+      header,
       params,
       query,
       body,

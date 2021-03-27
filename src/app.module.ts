@@ -5,8 +5,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
-import { APP_FILTER } from '@nestjs/core';
+import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { UnauthorizedExceptionFilter } from './common/exception/unauthorized-exception.filter';
+import { AspectLogger } from './common/logging.interceptor';
 
 @Module({
   imports: [
@@ -21,6 +22,10 @@ import { UnauthorizedExceptionFilter } from './common/exception/unauthorized-exc
     {
       provide: APP_FILTER,
       useClass: UnauthorizedExceptionFilter,
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: AspectLogger,
     },
   ],
 })

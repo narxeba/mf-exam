@@ -80,7 +80,7 @@ export class UsersService {
     if (loggedInUser.userId != userId) {
       throw new HttpException(
         {
-          message: 'No permission for update',
+          message: 'No Permission for Update',
         },
         HttpStatus.FORBIDDEN,
       );
